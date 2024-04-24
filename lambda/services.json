@@ -2,7 +2,7 @@
     "Services": [
         {
             "Name": "GLOBALACCELERATOR",
-            "Regions": ["eu-west-2", "us-east-1"],
+            "Regions": ["eu-west-1", "us-east-1"],
             "PrefixList": {
                 "Enable": true,
                 "Summarize": true
@@ -10,7 +10,7 @@
         },
         {
             "Name": "CODEBUILD",
-            "Regions": ["eu-west-2"],
+            "Regions": ["eu-west-1"],
             "PrefixList": {
                 "Enable": true,
                 "Summarize": true

@@ -7,7 +7,7 @@ resource "aws_lambda_function" "update_ip_ranges" {
 
   filename                       = data.archive_file.lambda_source.output_path
   source_code_hash               = filebase64sha256(data.archive_file.lambda_source.output_path)
-  function_name                  = "UpdateIPRanges"
+  function_name                  = "update-ip-ranges"
   description                    = "This Lambda function, invoked by an incoming SNS message, updates the IPv4 and IPv6 ranges with the addresses from the specified services"
   role                           = aws_iam_role.update_ip_ranges.arn
   handler                        = "update_aws_ip_ranges.lambda_handler"

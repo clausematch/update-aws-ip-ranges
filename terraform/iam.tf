@@ -1,5 +1,5 @@
 resource "aws_iam_role" "update_ip_ranges" {
-  name_prefix = "UpdateIPRanges"
+  name = "update-ip-ranges-role"
   description = "Managed by update IP ranges Lambda"
   assume_role_policy = jsonencode(
     {
@@ -36,7 +36,7 @@ resource "aws_iam_role" "update_ip_ranges" {
               "logs:CreateLogStream",
               "logs:PutLogEvents"
             ],
-            "Resource" : "arn:${data.aws_partition.current.partition}:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:log-group:/aws/lambda/*LambdaUpdateIPRanges*:*"
+            "Resource" : "arn:${data.aws_partition.current.partition}:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:log-group:/aws/lambda/*update-ip-ranges*:*"
           }
         ]
       }
