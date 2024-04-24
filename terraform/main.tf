@@ -1,14 +1,18 @@
 terraform {
   required_providers {
     aws = {
-      version = "~> 4.51.0"
+      version = ">= 4.51.0"
     }
     archive = {
       version = ">= 2.3.0"
     }
   }
 
-  required_version = "~> 1.3.7"
+  required_version = ">= 1.3.7"
+}
+
+locals {
+  profile = ""
 }
 
 data "aws_partition" "current" {}
@@ -301,6 +305,7 @@ resource "aws_lambda_permission" "amazon_ip_space_changed" {
 provider "aws" {
   alias  = "sns"
   region = "us-east-1"
+  profile = local.profile
 }
 resource "aws_sns_topic_subscription" "amazon_ip_space_changed" {
   provider  = aws.sns

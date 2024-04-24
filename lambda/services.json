@@ -1,55 +1,19 @@
 {
     "Services": [
         {
-            "Name": "API_GATEWAY",
-            "Regions": ["sa-east-1"],
+            "Name": "GLOBALACCELERATOR",
+            "Regions": ["eu-west-2", "us-east-1"],
             "PrefixList": {
                 "Enable": true,
-                "Summarize": false
-            },
-            "WafIPSet": {
-                "Enable": true,
-                "Summarize": false,
-                "Scopes": ["REGIONAL"]
+                "Summarize": true
             }
         },
         {
-            "Name": "CLOUDFRONT_ORIGIN_FACING",
-            "Regions": [],
-            "PrefixList": {
-                "Enable": false,
-                "Summarize": false
-            },
-            "WafIPSet": {
-                "Enable": true,
-                "Summarize": false,
-                "Scopes": ["REGIONAL"]
-            }
-        },
-        {
-            "Name": "EC2_INSTANCE_CONNECT",
-            "Regions": ["sa-east-1"],
+            "Name": "CODEBUILD",
+            "Regions": ["eu-west-2"],
             "PrefixList": {
                 "Enable": true,
-                "Summarize": false
-            },
-            "WafIPSet": {
-                "Enable": true,
-                "Summarize": false,
-                "Scopes": ["REGIONAL"]
-            }
-        },
-        {
-            "Name": "ROUTE53_HEALTHCHECKS",
-            "Regions": [],
-            "PrefixList": {
-                "Enable": false,
-                "Summarize": false
-            },
-            "WafIPSet": {
-                "Enable": true,
-                "Summarize": true,
-                "Scopes": ["REGIONAL"]
+                "Summarize": true
             }
         }
     ]
